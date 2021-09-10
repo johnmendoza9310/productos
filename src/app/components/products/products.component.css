@@ -1,3 +1,142 @@
-.product{
-    color: mediumblue;
+body{
+    font-family: Roboto, sans-serif, "Gill Sans Extrabold";
+    font-size: 8px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0
+}
+
+.products{
+
+    margin: 0.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+#products{
+    width: 100%;
+}
+
+.product_kind_2{
+-webkit-box-shadow: 0px 0px 15px -4px rgba(0,0,0,0.19);
+-moz-box-shadow: 0px 0px 15px -4px rgba(0,0,0,0.19);
+box-shadow: 0px 0px 15px -4px rgba(0,0,0,0.19);
+border-radius: 3px;
+border: 1px solid #ebebeb;
+width: 90%;
+margin: 0 auto;
+margin-bottom: 1rem;
+display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+
+.product_kind_1{
+    width: 90%;
+    display: flex;
+    flex-direction:row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 1rem;-webkit-box-shadow: 0px 0px 15px -4px rgba(0,0,0,0.19);
+    -moz-box-shadow: 0px 0px 15px -4px rgba(0,0,0,0.19);
+    box-shadow: 0px 0px 15px -4px rgba(0,0,0,0.19);
+    border-radius: 3px;
+    border: 1px solid #ebebeb;
+    margin-bottom: 1rem;
+
+
+
+}
+
+#product_kind_1{
+    width: 50%;
+}
+
+
+.img-kind-2{
+    width: 100%;
+}
+
+.img-kind-1{
+    width: 20%;
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+
+hr{
+    width: 90%;
+    margin: 0 0 1rem 0;
+    margin: 0 auto;
+}
+
+.hr-name{
+    margin-bottom: 1rem;
+}
+
+h1{
+    margin: 0;
+}
+
+.name_kind_2{
+    margin-top: 1rem;
+    color: #000000;
+    font-size: 1.2rem;
+
+    
+}
+
+.price_kind_2{
+    margin-top: 0.2rem;
+    color:  #585858;
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    
+}
+
+.footer-card{
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    padding: 2rem;
+    
+}
+.footer-card.div{
+    margin-left: 1rem;
+}
+
+
+.buy-kind2,.buy-kind1{
+
+    width: 7rem;
+    height: 2rem;
+    border-radius: 4px;
+    border: 0;
+    background: #006eff;
+    color: #dceaff;
+    height: 2.6rem;
+    margin:auto 0;
+}
+
+
+
+.category-name{
+    color:  #006eff;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    margin-right: 40%;
 }

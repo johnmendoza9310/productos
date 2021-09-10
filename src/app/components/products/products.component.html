@@ -1,14 +1,63 @@
+
 <body *ngFor="let category of finalData" >
+    
     <div class="products" >
-        <h1 >{{category.categoryName}}</h1>
+        <h1 class="category-name">{{category.categoryName}}</h1>
+        <hr class="hr-name">
+
+        <div id="products" *ngFor="let prod of category.productCategory" >
+
+            
 
 
-        <div *ngFor="let prod of category.productCategory">
+
+        <div *ngIf="prod.kind===2" class="product_kind_2"  >
+            <img class="img-kind-2" [src]="prod.img" >
+
+            <hr>
+
+            <div class="footer-card">
+
+        <div>
+            <h1 class="name_kind_2">{{prod.nameProduct}}</h1>
+            <h1 class="price_kind_2">{{prod.price | currency:'COP':'symbol-narrow':'.0-0'}} </h1>
+        </div>
+
+
+      
+
+        <button class="buy-kind2">Comprar</button>
+   
+
+
+
+    </div>
+            
+        </div>
+
+
+
+
+        <div *ngIf="prod.kind===1" class="product_kind_1"  >
+
+            <img class="img-kind-1"  [src]="prod.img" >
+
+
+            <div id="product_kind_1">
 
             <h1>{{prod.nameProduct}}</h1>
-            
-        
+            <h1 class="price_kind_2">{{prod.price | currency:'COP':'symbol-narrow':'.0-0'}} </h1>
         </div>
+
+        <button class="buy-kind1">Comprar</button>
+            
+        </div>
+
+  
+
+
+
+    </div>
     </div>
 
 
