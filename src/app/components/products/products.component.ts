@@ -1,19 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from "../../services/products.service";
 
+
+//https://assets.compramass.com/products/P000000001442@3x.jpg
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-
+  
 
 products:any=[];
-
 finalData:any=[]
+//prod:any=[];
 
-prod:any=[];
+imageProduct:string="";
+
 
   constructor(private productService: ProductsService) {
 
@@ -45,7 +49,7 @@ prod:any=[];
        
 
 
-        //get products for category and 
+        //get products for category and sort for ordinal
         const productCategory:any=[];
         const productsOfCategory = this.products;
         Object.keys(productsOfCategory).forEach( key=>{
@@ -53,15 +57,32 @@ prod:any=[];
           const idCategoryProduct= productsOfCategory[key].product_data.categories[0].category_id;
           const nameProduct = productsOfCategory[key].product_data.name;
           const ordinal= productsOfCategory[key].product_data.categories[0].ordinal;
+          const price = productsOfCategory[key].product_data.price;
+          const ean = productsOfCategory[key].product_data.ean;
+          const kind = productsOfCategory[key].product_data.kind;
+          let image:string="";
+
+
+
+        // this.getImage(ean,kind);
+
+          //image=this.imageProduct;
+
+
+
           
           if (categoryId===idCategoryProduct) {
-            productCategory.push({idCategoryProduct,nameProduct,ordinal})
+            productCategory.push({idCategoryProduct,nameProduct,ordinal,price, ean,kind})
           }
 
           productCategory.sort( (a:any,b:any)=>a.ordinal - b.ordinal );
   
   
         })
+
+
+
+
         
         this.finalData.push({categoryId,categoryName,productCategory});
         console.log("DATOS FINAL", this.finalData);
@@ -80,6 +101,18 @@ prod:any=[];
       this.products=resp;
     } )
   }
+
+  getImage(ean:any, kind:any){
+
+    this.productService.getImages(ean,kind)
+    .subscribe( (resp:any)=>{
+      console.log("IMPRIMIENDO IMAGEN ",resp);
+      
+    })
+  }
+
+  
+
 
  
 
